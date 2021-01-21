@@ -1,0 +1,17 @@
+galaxy_info:
+  role_name: wireguard
+  author: Matt Copperwaite
+  description: your description
+  issue_tracker_url: http://github.com/yamatt/ansible-role-wireguard
+  license: AGPLv3
+
+  min_ansible_version: 2.10
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - 20.04
+        - 18.04
+  #   - 99.99
+
+  galaxy_tags: []
