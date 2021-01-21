@@ -1,0 +1,11 @@
+[Interface]
+
+Address = {{ server_cidr }}
+ListenPort = {{ server_port }}
+
+PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o {{ server_interface }} -j MASQUERADE
+PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o {{ server_interface }} -j MASQUERADE
+
+[Peer]
+PresharedKey = {{ peer_preshared_key }}
+AllowedIPs = {{ allowed_peer_cidr }}

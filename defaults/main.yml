@@ -1,0 +1,4 @@
+---
+config_file_path: /etc/wireguard/wg0.conf
+server_port: "51820"
+allowed_peer_cidr: "0.0.0.0/0"

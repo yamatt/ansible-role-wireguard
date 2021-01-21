@@ -1,0 +1,19 @@
+---
+- name: Install wireguard
+  apt:
+    name: wireguard
+    state: present
+
+- name: Configure wireguard
+  template:
+    src: wg0.conf.j2
+    dest: "{{ config_file_path }}"
+    mode: 600
+
+- name: Enable IP forwarding
+  ansible.posix.sysctl:
+    name: net.ipv4.ip_forward
+    value: '1'
+    sysctl_set: yes
+    state: present
+    reload: yes
