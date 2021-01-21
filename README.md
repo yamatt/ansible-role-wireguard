@@ -6,7 +6,9 @@ This is a role for Ansible that can be used with Ansible Galaxy that installs an
 
 Install the latest version:
 
-  ansible-galaxy role install git+https://github.com/yamatt/ansible-role-wireguard.git
+```bash
+$ ansible-galaxy role install git+https://github.com/yamatt/ansible-role-wireguard.git
+```
 
 ## Notes
 
