@@ -4,6 +4,18 @@
     name: wireguard
     state: present
 
+- name: Write private key
+  copy:
+    content: "{{ server_private_key }}"
+    dest: "{{ private_key_file_path }}"
+    mode: 600
+
+- name: Write public key
+  copy:
+    content: "{{ server_public_key }}"
+    dest: "{{ private_key_file_path }}"
+    mode: 600
+
 - name: Configure wireguard
   template:
     src: wg0.conf.j2
