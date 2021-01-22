@@ -1,11 +1,14 @@
 [Interface]
-
+PrivateKey = {{ server_private_key }}
 Address = {{ server_cidr }}
 ListenPort = {{ server_port }}
 
-PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o {{ server_interface }} -j MASQUERADE
-PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o {{ server_interface }} -j MASQUERADE
+PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o {{ server_interface | default(ansible_default_ipv4["interface"]) }} -j MASQUERADE
+PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o {{ server_interface | default(ansible_default_ipv4["interface"]) }} -j MASQUERADE
 
 [Peer]
-PresharedKey = {{ peer_preshared_key }}
+PublicKey = {{ peer_public_key }}
+{% if preshared_key %}
+PresharedKey = {{ public_key }}
+{% endif %}
 AllowedIPs = {{ allowed_peer_cidr }}
