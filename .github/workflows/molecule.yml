@@ -7,5 +7,7 @@ jobs:
   molecule:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: mawalu/molecule-action@master
+      - name: Checkout latest version
+        uses: actions/checkout@v2
+      - name: Run molecule
+        uses: mawalu/molecule-action@master
