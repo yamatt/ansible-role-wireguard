@@ -7,7 +7,7 @@
 - name: Allow wireguard connections
   ufw:
     rule: allow
-    port: {{ server_port }}
+    port: "{{ server_port }}"
     proto: udp
 
 - name: Limit number of SSH connections
