@@ -29,3 +29,10 @@
     sysctl_set: yes
     state: present
     reload: yes
+
+- name: Enable and start Wireguard at boot
+  ansible.builtin.systemd:
+    name: wireguard@wg0
+    state: started
+    enabled: yes
+    masked: no
