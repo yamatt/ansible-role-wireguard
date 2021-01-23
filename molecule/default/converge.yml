@@ -4,12 +4,9 @@
   tasks:
     - name: "Call setup"
       setup:
-    - name: "Print wanted variables"
-      debug:
-        msg: 'ansible_kernel "{{ ansible_kernel }}"'
     - name: "Include role"
       include_role:
-        name: "ansible-role-wireguard"
+        name: "wireguard"
   vars:
     - ansible_python_interpreter: /usr/bin/python3
   vars_files:
