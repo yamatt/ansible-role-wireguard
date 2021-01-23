@@ -2,5 +2,7 @@
 config_file_path: /etc/wireguard/wg0.conf
 private_key_file_path: /etc/wireguard/privatekey
 public_key_file_path: /etc/wireguard/publickey
+
+server_cidr: "10.0.0.1/24"
 server_port: "51820"
-allowed_peer_cidr: "0.0.0.0/0"
+allowed_peer_cidr: "10.0.0.0/24"
