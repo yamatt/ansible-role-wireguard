@@ -13,7 +13,7 @@
 - name: Write public key
   copy:
     content: "{{ server_public_key }}"
-    dest: "{{ private_key_file_path }}"
+    dest: "{{ public_key_file_path }}"
     mode: 600
 
 - name: Configure wireguard
@@ -29,3 +29,9 @@
     sysctl_set: yes
     state: present
     reload: yes
+
+- name: Add UFW rule
+
+- name: Enable Wireguard
+
+- name: Start wireguard
