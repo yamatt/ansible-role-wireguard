@@ -11,11 +11,11 @@
     proto: udp
 
 - name: Limit number of SSH connections
-ufw:
-  rule: limit
-  port: ssh
-  proto: tcp
-when: enable_ssh
+  ufw:
+    rule: limit
+    port: ssh
+    proto: tcp
+  when: enable_ssh
 
 - name: Allow SSH access
   ufw:
