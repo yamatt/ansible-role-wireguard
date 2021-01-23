@@ -29,9 +29,3 @@
     sysctl_set: yes
     state: present
     reload: yes
-
-- name: Add UFW rule
-
-- name: Enable Wireguard
-
-- name: Start wireguard
