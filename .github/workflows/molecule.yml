@@ -1,7 +1,6 @@
 name: Run molecule tests
 on:
   - push
-  - pull_request
 
 jobs:
   molecule:
